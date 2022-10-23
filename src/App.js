@@ -18,7 +18,7 @@ function App() {
 export default App;
 
 
-/* start block from starter-app:
+/* default start block from starter-app:
 <header className="App-header">
   <img src={logo} className="App-logo" alt="logo" />
   <p>
