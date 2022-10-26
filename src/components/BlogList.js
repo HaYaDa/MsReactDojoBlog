@@ -1,4 +1,7 @@
-const BlogList = ( { blogs, title, handleDelete} ) => {
+// prop handleDelete remowved @ #17 - Fetching Data with useEffect 
+// const BlogList = ( { blogs, title, handleDelete} ) => {
+
+const BlogList = ( { blogs, title } ) => {
     /* // First approuch before we change to destructuring props: 
     const BlogList = ( props ) => { 
         const blogs = props.blogs;
@@ -16,7 +19,6 @@ const BlogList = ( { blogs, title, handleDelete} ) => {
                 <div className="blog-preview" key={ blog.id }>
                     <h2 className="preview-title">{ blog.title }</h2>
                     <p className="preview-author">Written by { blog.author }</p>
-                    <button onClick = {() => handleDelete(blog.id)}>Delete Blog</button>
                 </div>
             ))}
         </div>
@@ -24,3 +26,6 @@ const BlogList = ( { blogs, title, handleDelete} ) => {
 }
  
 export default BlogList;
+
+// Button removed @ #17 Fetching Data with useEffect 
+// <button onClick = {() => handleDelete(blog.id)}>Delete Blog</button>
