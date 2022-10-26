@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
+import useFetch from './useFetch'; 
 
 const Home = () => {
+    // Destructuring data from useFetch.js (custom hook) - React 20 - The Net Ninja
+    const { data: blogs, isPending, error } = useFetch('http://localhost:8000/blogs'); 
+
     /* 
     // useState hook / Full React Tutorial 08 by The Net Ninja
     //define a reactive value for the component
@@ -21,7 +25,8 @@ const Home = () => {
     { title: 'Welcome to my Ninja friends...', body: 'lorem ipsum...', author: 'John Doe', id: 2 },
     { title: 'Wev Dev Top Tips', body: 'lorem ipsum...', author: 'HaYaDa', id: 3 }
     ]); */
-
+    /*
+    // Removed STATE block to useFetch.js (custom hook) - React 20 - The Net Ninja
     // Fetching Data with useEffect - React - 18 - The Net Ninja
     const [blogs, setBlogs] = useState(null); // We set the initial value to be NULL, than once we've successfully fetched the data, we update our state-data using setBlogs with the data we get back   
     
@@ -30,6 +35,7 @@ const Home = () => {
 
      // STORING the ERROR (fetch-block) in STATE => React - 19 - The Net Ninja
      const [ error, setError ] = useState(null);
+    */
 
     /* Functionality removed @ end of #17 - Fetching Data with useEffect because this functionality replaced with Delete Request to db.json
     const handleDelete = (id) => {
@@ -49,8 +55,11 @@ const Home = () => {
     }); */
 
     // Fetching Data with useEffect - React - 18 - The Net Ninja
+    // Remove following code to useFetch.js, for CREATING CUSTOM HOOK - React - 20 - The Net Ninja
+     /*
     useEffect( () => {
         // Surround the fetch-code in a setTimeout to simulate a request, to show Loading Message longer
+                
         setTimeout( () => {
             fetch('http://localhost:8000/blogs')
             .then(response => {
@@ -78,7 +87,8 @@ const Home = () => {
                 setIsPending(false); 
             }); 
         }, 1000);           
-    }, [])
+    }, []) 
+    */
 
     return ( 
         <div className="home">
