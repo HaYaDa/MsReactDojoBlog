@@ -2,16 +2,30 @@
 // import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home'; 
+// React Router - 21 - The Net Ninja
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// React - 22 - Exact Match Routes - The Net Ninja
+import Create from './components/Create';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
       <Navbar />
       <div className="content">
-        <Home /> 
+        <Switch>
+          <Route exact path="/">
+            <Home /> 
+          </Route>
+          <Route path="/create">
+            <Create />
+          </Route>
+        </Switch>
       </div>
     </div>
+    </Router>
+    
   );
 }
 
