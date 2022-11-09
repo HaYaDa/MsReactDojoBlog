@@ -58,6 +58,36 @@
   margin-bottom: 0.5rem; 
 }
 
+.blog-preview a {
+  text-decoration: none;
+}
+
+/* blog details page */
+.blog-details h2 {
+  font-size: 1.25rem;
+  color: #f1356d; 
+  margin-bottom: 00.625rem;
+}
+
+.blog-details div {
+  margin: 1.25rem 0; 
+}
+
+/* own css */ 
+.blog-details p {
+  font-weight: bold;
+}
+
+
+/* button comes later so commented
+.blog-details button {
+  background: #f1356d; 
+  border: 0; 
+  padding: 0.5rem; 
+  border-radius: 00.5rem;
+  cursor: pointer;
+}
+*/
 /* styles from App.css */
 
 .App-logo {
