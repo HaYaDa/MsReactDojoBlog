@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+// no need to import useState and useEffect, because we use and import it in useFetch.js 
+// import { useState, useEffect } from 'react';
 import BlogList from './BlogList';
 import useFetch from './useFetch'; 
 

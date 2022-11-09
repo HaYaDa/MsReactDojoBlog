@@ -11,9 +11,15 @@ const useFetch = (url) => {
     const [ error, setError ] = useState(null);
 
     useEffect( () => {
+        // useEffect cleanUp - 24 - The NetNinja
+        // create abortController to stop fetch if component changed or unmounts
+        const abortCont = new AbortController(); 
+
+
         // Surround the fetch-code in a setTimeout to simulate a request, to show Loading Message longer
         setTimeout( () => {
-            fetch(url)
+            // adding signal property as a second argument - 24 - The Net Ninja
+            fetch(url, { signal: abortCont.signal })
             .then(response => {
                console.log(response);
                if (!response.ok) {
@@ -33,12 +39,20 @@ const useFetch = (url) => {
                 setError(null); 
             })
             .catch( err => {
-                console.log(err.message);
-                // edit/update the ERROR in STATE
-                setError(err.message); 
-                setIsPending(false); 
+                // console.log(err.message);
+                // if it's an error caused by us(abortError) we dont want to update the STATE - 24- The Net Ninja
+                if ( err.name === 'AbortError') {
+                    console.log('fetch aborted...')
+                } else {
+                    // edit/update the ERROR in STATE
+                    setError(err.message); 
+                    setIsPending(false); 
+                }
+                
             }); 
-        }, 1000);           
+        }, 1000);
+        // place the cleanUp function
+        return () => abortCont.abort(); 
     }, []);
 
     return { data, isPending, error }

@@ -7,7 +7,7 @@ const Navbar = () => {
 
     return ( 
         <nav className="navbar">
-            <div>
+            <div> 
             
             <h1>{logoV}The Dojo Blog{logoV2}</h1>
             </div>
