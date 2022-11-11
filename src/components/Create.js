@@ -1,5 +1,7 @@
 // import useState for input fields - #27 - the NetNinja
 import { useState } from 'react'; 
+// import useHistory - PROGRAMMATIC REDIRECTS - #30- the NetNinja
+import { useHistory } from 'react-router-dom'; 
 
 const Create = () => {
     const [ title, setTitle ] = useState(""); 
@@ -7,6 +9,8 @@ const Create = () => {
     const [ author, setAuthor ] = useState("Select an author...");
     // create isPending state for LOADING, initially false - #29 - the NetNinja
     const [ isPending, setIsPending ] = useState(false); 
+    // invoke useHistory (creating history object) - #30 - the NetNinja
+    const history = useHistory(); 
 
     // handleSubmit - React #28 - Submit events - The NetNinja
     // define the handleSubmit method
@@ -27,8 +31,11 @@ const Create = () => {
             body: JSON.stringify(blog)
         }).then(() => {
             console.log('New Blog created and added...');
+            console.info(blog); 
             // set isPending to false after fetching - #29 - the NetNinja
-            setIsPending(false); 
+            setIsPending(false);
+            // once the blog is added, than we push the user to the homepage
+            history.push('/');  
         })
 
 
