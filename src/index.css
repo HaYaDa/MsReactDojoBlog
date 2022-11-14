@@ -73,6 +73,15 @@
   margin: 1.25rem 0; 
 }
 
+.blog-details button {
+  background: #f1356d;
+  color: #fff; 
+  border: 0; 
+  padding: 0.5rem;
+  border-radius: 0.5rem; 
+  cursor: pointer;
+}
+
 /* Create New Blog Form */
 .create {
   max-width: 25rem;

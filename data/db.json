@@ -55,12 +55,6 @@
       "id": 9
     },
     {
-      "title": "dddddddddd",
-      "body": "ddddddddddddddddddddddd",
-      "author": "Mario",
-      "id": 10
-    },
-    {
       "title": "programmatic redirect",
       "body": "history.go(-1) after adding a new blog",
       "author": "HaYaDa",
@@ -71,12 +65,6 @@
       "body": "Once the new blog is added, we push the user with\nhistory.push('/') to the homepage... ",
       "author": "Jane Doe",
       "id": 12
-    },
-    {
-      "title": "test the push again",
-      "body": "now we add a console.log to see the submitted data",
-      "author": "John Doe",
-      "id": 13
     }
   ]
 }
